@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="NeverMiss helps you keep track of important renewals and deadlines.">
+  <title>NeverMiss — Never lose money to a forgotten deadline</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/">Never<span>Miss</span></a><nav><a href="#how">How it works</a><a href="#pricing">Pricing</a><button id="accountBtn" class="button ghost">Sign in</button></nav></header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">YOUR DEADLINES, UNDER CONTROL</div>
+    <h1>Never lose money<br>to a <span>forgotten date.</span></h1>
+    <p class="lead">Keep renewals, registrations, insurance and important documents in one simple place. Get reminders before deadlines arrive.</p>
+    <div class="actions"><button class="button primary" id="startBtn">Get started</button><a class="textlink" href="#how">See how it works →</a></div>
+    <div class="trust">✓ Simple reminders &nbsp; ✓ Annual membership &nbsp; ✓ Your data in one place</div>
+  </section>
+  <section class="preview">
+    <div class="panel">
+      <div class="panel-head"><div><small>YOUR OVERVIEW</small><h2>Upcoming deadlines</h2></div><span class="live-dot">● Your dashboard</span></div>
+      <div class="sample"><div class="symbol">🚗</div><div class="sample-info"><b>Vehicle insurance</b><small>Personal · Example reminder</small></div><span class="pill amber">12 days</span></div>
+      <div class="sample"><div class="symbol">🏢</div><div class="sample-info"><b>Business registration</b><small>Business · Example reminder</small></div><span class="pill amber">23 days</span></div>
+      <div class="sample"><div class="symbol">🌐</div><div class="sample-info"><b>Website domain</b><small>Digital · Example reminder</small></div><span class="pill green">45 days</span></div>
+      <div class="panel-foot">A clear view of what needs your attention.</div>
+    </div>
+  </section>
+  <section class="features" id="how"><div class="eyebrow">HOW IT WORKS</div><h2>Set it once. Stay ahead.</h2><div class="feature-grid">
+    <article><div class="feature-icon">＋</div><h3>Add a deadline</h3><p>Save the name, due date and a few useful details.</p></article>
+    <article><div class="feature-icon">◷</div><h3>Get reminded</h3><p>Receive reminders 30, 7 and 1 day before a deadline when email is configured.</p></article>
+    <article><div class="feature-icon">✓</div><h3>Take action</h3><p>See what is coming and renew before it becomes urgent.</p></article>
+  </div></section>
+  <section class="pricing" id="pricing"><div class="eyebrow">SIMPLE PRICING</div><h2>One small price. Fewer surprises.</h2><div class="price-card"><div class="price">$50 <small>/ year</small></div><p>One annual membership for your important deadlines.</p><ul><li>Unlimited deadline records</li><li>Upcoming-deadline dashboard</li><li>30, 7 and 1-day email reminders (with SMTP configured)</li><li>Recurring renewals can be re-added</li></ul><button class="button primary full" id="priceBtn">Create your account</button><small class="muted">Bitcoin payments are reviewed manually before access is activated.</small></div></section>
+</main>
+<footer>© <span id="year"></span> NeverMiss · Stay ahead of every deadline.</footer>
+
+<div class="modal hidden" id="authModal"><div class="modal-card"><button class="close" data-close>×</button><div class="eyebrow">WELCOME TO NEVERMISS</div><h2 id="authTitle">Create your account</h2><form id="authForm"><label>Email<input type="email" id="email" required autocomplete="email"></label><label>Password<input type="password" id="password" minlength="10" required autocomplete="new-password"></label><button class="button primary full" id="authSubmit">Create account</button></form><p class="muted center" id="authSwitch">Already registered? <a href="#" id="switchAuth">Sign in</a></p><p class="notice" id="authMessage"></p></div></div>
+
+<div class="modal hidden" id="appModal"><div class="modal-card wide"><button class="close" data-close>×</button><div class="app-head"><div><div class="eyebrow">YOUR PRIVATE SPACE</div><h2>My deadlines</h2><p class="muted" id="userEmail"></p></div><button class="button ghost" id="logoutBtn">Sign out</button></div>
+  <div id="subscriptionBox" class="subscription-box"></div>
+  <div id="paymentBox" class="payment-box hidden"><h3>Activate your annual membership</h3><p>Send the equivalent of <b>US$50 in Bitcoin</b> to this address. Calculate the BTC amount using a trusted exchange rate immediately before payment.</p><div class="wallet" id="wallet"></div><button class="button ghost full" id="copyWallet">Copy Bitcoin address</button><label>Bitcoin transaction ID (TXID)<input id="txid" placeholder="64-character transaction ID"></label><button class="button primary full" id="submitPayment">Submit payment for review</button><p class="muted tiny">Do not send funds until you have checked the address and network. Only Bitcoin mainnet (BTC) is intended. Payments are not refundable automatically.</p><div id="paymentMessage" class="notice"></div></div>
+  <div id="reminderArea" class="hidden"><form id="reminderForm" class="add-form"><h3>Add a deadline</h3><div class="form-grid"><label>What needs renewing?<input id="title" required maxlength="120" placeholder="e.g. Vehicle insurance"></label><label>Due date<input type="date" id="dueDate" required></label><label>Category<select id="category"><option>Personal</option><option>Business</option><option>Insurance</option><option>Vehicle</option><option>Property</option><option>Digital</option><option>Other</option></select></label><label>Notes (optional)<input id="notes" maxlength="1000" placeholder="Policy number, contact, etc."></label></div><button class="button primary">Save deadline</button></form><h3 class="list-title">Your saved deadlines</h3><div id="reminderList"></div></div>
+</div></div>
+<script src="/app.js"></script>
+</body></html>

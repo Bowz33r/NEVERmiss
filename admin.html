@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NeverMiss Admin</title><link rel="stylesheet" href="/style.css">
+<style>
+.admin-wrap{max-width:900px;margin:55px auto;padding:0 20px}.admin-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin:18px 0}.admin-row{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}.admin-row:last-child{border:0}.admin-actions{display:flex;gap:8px}.approve{background:#e7f7ef;color:#14784f}.reject{background:#fff0f0;color:#b42318}.admin-input{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;margin:8px 0 12px}.status{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/">Never<span>Miss</span></a><nav><a href="/">View website</a></nav></header>
+<main class="admin-wrap">
+<div class="eyebrow">PRIVATE ADMINISTRATION</div><h1 style="font-size:40px;letter-spacing:-1.5px">Payment review</h1>
+<div class="admin-card" id="login">
+  <h2>Administrator access</h2>
+  <p class="muted">Enter the ADMIN_KEY configured in your server's .env file. Do not share this key.</p>
+  <input class="admin-input" type="password" id="adminKey" placeholder="Admin key" autocomplete="current-password">
+  <button class="button primary" id="load">Load payment submissions</button>
+  <p class="notice" id="loginMessage"></p>
+</div>
+<div class="admin-card hidden" id="results">
+  <div style="display:flex;justify-content:space-between;align-items:center"><h2>Submitted payments</h2><button class="button ghost" id="refresh">Refresh</button></div>
+  <div id="paymentRows"><p class="muted">No submissions loaded.</p></div>
+</div>
+</main>
+<script src="/admin.js"></script>
+</body></html>
